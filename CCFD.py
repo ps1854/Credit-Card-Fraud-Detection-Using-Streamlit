@@ -1,7 +1,6 @@
 #importing packages
 from random import random
 
-from matplotlib.colors import Normalize
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
