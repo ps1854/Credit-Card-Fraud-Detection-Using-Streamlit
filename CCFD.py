@@ -20,9 +20,9 @@ df = df.sample(frac = 0.1, random_state = 48)
 # exploring data
 if st.sidebar.checkbox("Show what dataset looks like"):
     st.write(df.head())
-    st.write("Shape of the Dataset ", df.shape)
+    st.write("Shape of the Dataset: \n", df.shape)
     # st.write("Summary of the Dataset ", df.info())
-    st.write("Description of the Dataset ", df.describe())
+    st.write("Description of the Dataset: ", df.describe())
 
 if st.sidebar.checkbox("Show info of missing values"):
     st.write(df.isna().sum())
@@ -47,7 +47,7 @@ if st.sidebar.checkbox("Show Plots"):
     fig1 = plt.figure()
     sns.histplot(df["Amount"], bins = 40).set_title("Distribution of Monetory value feature")
     st.pyplot(fig1)
-    st.write("The distribution of the monetary value of all transactions is heavily right-skewed. The vast majority of transactions are relatively small and only a tiny fraction of transactions comes even close to the maximum.")
+    st.write("The distribution of the monetary value of all transactions is heavily right-skewed. The m ajority of transactions are relatively small and only a tiny fraction of transactions comes even close to the maximum.")
     
     fig2 = plt.figure()
     sns.histplot(valid["Time"], bins = 40).set_title("Distribution of Valid transactions over Time")
@@ -61,7 +61,7 @@ if st.sidebar.checkbox("Show Plots"):
     fig4 = plt.figure()
     sns.heatmap(df.corr(), cmap = sns.color_palette("coolwarm", as_cmap = True)).set_title("Correlation Heatmap");
     st.pyplot(fig4)
-    st.write("There is not much correlation between any of the attributes")
+    st.write("There is not much correlation among any of the attributes")
 
 # obtaining X and Y
 X = df.drop(["Class"], axis = 1)
